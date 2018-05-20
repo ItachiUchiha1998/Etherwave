@@ -24,7 +24,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-mongoose.connect('mongodb://localhost/EtherWave');
+//mongoose.connect('mongodb://localhost/EtherWave');
+mongoose.connect('mongodb://testdb:testdb@ds129780.mlab.com:29780/etherwave',(req,res) => {
+	console.log("Connected to Database");
+})
 
 app.use('/', index);
 app.use('/users', users);
