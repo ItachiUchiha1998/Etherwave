@@ -5,24 +5,27 @@
 	<title>EtherWave</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-		
+	<script type="text/javascript" src="./javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="./javascripts/qrcode.min.js"></script>
 </head>
 
 <style>
 	#qrcode {
-  width:160px;
-  height:160px;
-  margin-top:15px;
-}
+	  width:160px;
+	  height:160px;
+	  margin-top:15px;
+	}
+	#text {
+	  display: block;
+	  width: 80%;
+	}
 </style>
 
 <body>
-			
+	<input id="text" type="text" value="our-super-token-id" />
 	<div id="qrcode"></div>
+	
 
-<script type="text/javascript" src="javascripts/qrcode.min.js">
-new QRCode(document.getElementById("qrcode"), "http://jindo.dev.naver.com/collie");
-</script>
-
+	<script type="text/javascript" src="./javascripts/qrcode-page.js"></script>
 </body>
 </html>
