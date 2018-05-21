@@ -52,9 +52,6 @@
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
     </div>
   </div>
 </nav>
@@ -82,12 +79,6 @@
         </div>      
       </div>
 
-      <div class="item ">
-        <img src="images/3.png" alt="Image">
-        <div class="carousel-caption">
-          <p>Events</p>
-        </div>      
-      </div>
 
     </div>
 
@@ -107,7 +98,7 @@
   <div class="row">
     <% for(var i=0; i< event.length; i++) { %>  
     <div class="col-sm-4">
-      <img src="images/1.png" class="img-responsive" style="width:100%" alt="Image">
+      <img src="images/<%=event[i].id%>.png" class="img-responsive" style="width:100%" alt="Image">
       <p> <%= event[i].name %></p>
       <div class="col-sm-4">
       <div class="well-s" style="position: relative;left: -3px" >
