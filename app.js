@@ -9,9 +9,6 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
-const mongoose = require('mongoose');
-const db = require('./model/db');
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,10 +21,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-//mongoose.connect('mongodb://localhost/EtherWave');
-mongoose.connect('mongodb://testdb:testdb@ds129780.mlab.com:29780/etherwave',(req,res) => {
-	console.log("Connected to Database");
-})
 
 app.use('/', index);
 app.use('/users', users);
