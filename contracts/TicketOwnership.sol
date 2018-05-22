@@ -13,6 +13,4 @@ contract TicketOwnership is ERC721BasicToken {
     string public constant SYMBOL = "EWAVE";
     string public tokenMetadataBaseURI = "https://api.etherwave.com/";
 
-    // Mapping from owner to owned token
-    mapping (address => uint256[]) internal ownedTokens;
 }

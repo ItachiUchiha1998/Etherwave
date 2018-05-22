@@ -15,7 +15,7 @@ contract TicketFactory is Ownable, TicketOwnership {
 
     struct Ticket {
         string description;
-        //bytes32 referenceCode;
+        uint256 referenceCode;
         uint256 dateTime;
         bool isValid;    
     }
@@ -36,7 +36,9 @@ contract TicketFactory is Ownable, TicketOwnership {
     event EventPriceChanged(uint256 eventId, uint256 price);
     
     /* Mappings */
-    mapping (uint => address) public eventToAdmin;
+    mapping (uint => address) private eventToAdmin;
+    // Mapping from owner to owned token
+    mapping (address => uint256[]) private ownedTokens;
 
     /**
      * @dev Make a purchase of a ticket, receives the eth value
@@ -61,17 +63,26 @@ contract TicketFactory is Ownable, TicketOwnership {
         require(eventInstance.price == msg.value);
         
         uint256 dateTime = eventInstance.dateTime;
-        //bytes32 referenceCode = keccak256(eventInstance.name, _buyer);
-        string storage description = eventInstance.name;
-        
+        uint256 referenceCode = tickets.length ** 12 % 10 ** 6;
+        string storage description = eventInstance.name;        
 
         //Update Event
         eventInstance.ticketsAvailable--;
-        uint id = tickets.push(Ticket(description, dateTime, true)) - 1;
-        
+        uint id = tickets.push(Ticket(description, referenceCode, dateTime, true)) - 1;
+        ownedTokens[_buyer].push(id);
+
         _mint(_buyer, id);
         emit TicketCreated(_buyer, id);
         return id;
+    }
+
+    /**
+     * @dev The tickets owned by an address
+     * @param _owner address of the ticket owner
+     * @return uint256[] id of tickets
+     */
+    function ticketsOf(address _owner) public view returns (uint256[]) {
+        return ownedTokens[_owner];
     }
 
     /**

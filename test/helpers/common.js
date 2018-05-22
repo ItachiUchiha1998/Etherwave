@@ -25,6 +25,8 @@ class CommonVariables {
         // Price: for future consideration: different ticket prices for different sections
         this.eventTicketprice = web3.toWei('0.2', 'ether');        
         this.eventTicketsupply = 100000;
+
+        //this.ticketRefCode = 777216;
     }
 }
 
