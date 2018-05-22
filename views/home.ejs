@@ -94,7 +94,13 @@
             </div>
             <div class="row">
               <div class="col-sm-12 text-center">
-                <button type="button" class="btn btn-success" onClick="purchaseTicket(this.id)" id="<%=event[i].id%>">Buy Ticket</button>
+                
+                <% if(event[i].seats_remaining == 0) { %>
+             <button type="button" class="btn btn-secondary" disabled onClick="purchaseTicket(this.id)" id="<%=event[i].id%>"><b>Sold Out!</b></button>
+             <button type="button" class="btn btn-primary active" onClick="" id="<%=event[i].id%>">Trade Tickets</button>             
+              <% } else { %>
+                  <button type="button" class="btn btn-success" onClick="purchaseTicket(this.id)" id="<%=event[i].id%>">Buy Ticket</button>
+              <% } %>
               </div>
             </div>
           </div>
