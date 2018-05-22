@@ -25,7 +25,7 @@ exports.findOne = (req, res) => {
                 message: "Event not found with id " + req.params.eventId
             });            
         }
-        res.send(event);
+        res.render('event_detail',{title: 'EtherWave', event: event});
     }).catch(err => {
         if(err.kind === 'ObjectId') {
             return res.status(404).send({
