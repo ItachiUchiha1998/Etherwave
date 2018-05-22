@@ -67,7 +67,9 @@ exports.update = function(req, res) {
         name: req.body.name || "Untitled Event",
         price: req.body.price || 700,
         location: req.body.location || "Toronto",
-        date: req.body.date ||"2018-05-28"
+        date: req.body.date ||"2018-05-28",
+        description: req.body.description || "This concert can't be missed, mussum Ipsum, cacilds vidis litro abertis. Si u mundo ta muito paradis Toma um me que o mundo vai girarzis" ,
+        seats_remaining: req.body.seats_remaining || 0
     }, {new: true})
     .then(event => {
         if(!event) {

@@ -80,20 +80,17 @@
           <h3 class="text-center"><%= event[i].name %></h3>
           <div class="row">
             <div class="col-sm-12 text-justify">                
-              <% if(i == 0) { %>
-              <p> Nicknamed Mr. Worldwide, the Cuban-American music powerhouse from Miami, Florida, has been charting No. 1 hits in over 15 countries for a decade.</p>               
-              <% } else { %>
-              <p> This concert can't be missed, mussum Ipsum, cacilds vidis litro abertis. Si u mundo ta muito paradis Toma um me que o mundo vai girarzis</p>
-              <% } %>
+                  <p> <%= event[i].description %> </p> 
             </div>
           </div>
           <div class="row">
             <div class="col-sm-6">
-              <!--<p> <i class="fas fa-dollar-sign"></i> &emsp; <%= event[i].price %> </p> -->              
+              <p> <i class="fas fa-dollar-sign"></i> &emsp; <%= event[i].price %> </p>            
               <p><i class="fas fa-map-marker"></i> &emsp; <%= event[i].location %> </p>
             </div>
             <div class="col-sm-6">
                 <p><i class="fas fa-calendar-alt"></i> &emsp; <%= event[i].date.toISOString().substring(0, 10) %> </p>
+                <p> <i class="fas fa-ticket-alt"></i> &emsp; <%= event[i].seats_remaining%> Left </p>
             </div>
             <div class="row">
               <div class="col-sm-12 text-center">
