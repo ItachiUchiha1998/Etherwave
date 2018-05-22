@@ -45,13 +45,14 @@
     <div class="col-md-4 row event-detail">
       <h1><%= event.name %></h1>
       <hr>
-      <p></p><p>Nicknamed Mr. Worldwide, the Cuban-American music powerhouse from Miami, Florida, has been charting No. 1 hits in over 15 countries for a decade.</p>               &nbsp;</p><p></p>
+      <p></p><p> <%= event.description %> </p>               &nbsp;</p><p></p>
       <p><i class="fas fa-calendar-alt"></i> &emsp; <%= event.date.toISOString().substring(0, 10) %> </p>
       <p><i class="fas fa-map-marker"></i> &emsp; <%= event.location %> </p>
+      <p> <i class="fas fa-ticket-alt"></i> &emsp; <%= event.seats_remaining%> Left </p>
 
       <div class="row">
         <div class="col-md-6">
-          <h3>$110.00</h3>
+          <h3><i class="fas fa-dollar-sign"></i>  <%= event.price %> </h3>
         </div>
         <div class="col-md-6">
           <a class="btn btn-default btn-purchase">Buy Ticket</a>
