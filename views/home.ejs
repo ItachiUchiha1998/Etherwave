@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="./stylesheets/app.css">
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
@@ -93,27 +95,40 @@
     </a>
 </div>
   
-<div class="container text-center" >    
+<div class="container" >    
   <h3>UPCOMING EVENTS</h3><br>
   <div class="row">
-    <% for(var i=0; i< event.length; i++) { %>  
-    <div class="col-sm-4">
-      <img src="images/<%=event[i].id%>.png" class="img-responsive" style="width:100%" alt="Image">
-      <p> <%= event[i].name %></p>
-      <div class="col-sm-4">
-      <div class="well-s" style="position: relative;left: -3px" >
-       <p> <span>Prices:</span> $<%= event[i].price %> </p>
+    <% for(var i=0; i < event.length; i++) { %>  
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="images/<%=event[i].id%>.png" class="img-responsive event-list-img" alt="Image">
+        <div class="caption">
+          <h3 class="text-center"><%= event[i].name %></h3>
+          <div class="row">
+            <div class="col-sm-12 text-justify">                
+              <% if(i == 0) { %>
+              <p> Nicknamed Mr. Worldwide, the Cuban-American music powerhouse from Miami, Florida, has been charting No. 1 hits in over 15 countries for a decade.</p>               
+              <% } else { %>
+              <p> This concert can't be missed, mussum Ipsum, cacilds vidis litro abertis. Si u mundo ta muito paradis Toma um me que o mundo vai girarzis</p>
+              <% } %>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-6">
+              <!--<p> <i class="fas fa-dollar-sign"></i> &emsp; <%= event[i].price %> </p> -->              
+              <p><i class="fas fa-map-marker"></i> &emsp; <%= event[i].location %> </p>
+            </div>
+            <div class="col-sm-6">
+                <p><i class="fas fa-calendar-alt"></i> &emsp; <%= event[i].date.toISOString().substring(0, 10) %> </p>
+            </div>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <button type="button" class="btn btn-success" id="<%=event[i].id%> >">Buy Ticket</button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="well-s" style="width: 150%;top: -30px;left: 150px;position: relative;" >
-       <p><span>Location:</span> <%= event[i].location %> </p>
-      </div>
-      <div class="well-s" style="width: 150%;position: relative;top: -30px;left: -10px" >
-       <p><span>Date:</span> <%= event[i].date.toISOString().substring(0, 10) %> </p>
-    </div>
-       <div>
-          <button type="button" class="btn btn-success" id="<%=event[i].id%> >" style="top: -33px;position: relative;">Book Tickets</button>
-       </div>
-    </div>
     </div>
   <% } %>
   </div>
