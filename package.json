@@ -19,32 +19,19 @@
     "ejs": "~2.5.5",
     "express": "^4.16.3",
     "mongoose": "^5.1.1",
-<<<<<<< HEAD
     "morgan": "^1.9.0",
     "multer": "^1.3.0",
     "openzeppelin-solidity": "^1.9.0",
     "serve-favicon": "^2.5.0",
     "truffle": "^4.1.11",
     "web3": "^1.0.0-beta.34"
-=======
-    "morgan": "~1.7.0",
-    "openzeppelin-solidity": "^1.9.0",
-    "truffle": "^4.1.8",
-    "web3": "^1.0.0-beta.34",
-    "multer": "^1.3.0",
-    "serve-favicon": "~2.3.2"
->>>>>>> f2ac55a2012563977ea37e1f09d6b31626960566
   },
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
     "chai-bignumber": "^2.0.2",
     "ganache-cli": "^6.1.0",
-<<<<<<< HEAD
     "solidity-coverage": "^0.5.4",
-=======
-    "solidity-coverage": "^0.5.0",
->>>>>>> f2ac55a2012563977ea37e1f09d6b31626960566
     "solium": "^1.1.7",
     "truffle-contract": "^3.0.5"
   }
