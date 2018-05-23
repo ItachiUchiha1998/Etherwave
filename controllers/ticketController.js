@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Concert = require('../model/event');
 
-
 exports.findAll = function(req, res) {
     Concert.find({}, (err, event) => {
         if (err) {
@@ -44,8 +43,10 @@ exports.create = (req, res) => {
       name: req.body.name ,
       price: req.body.price,
       date: req.body.date,
-      image: req.body.image,
-      location: req.body.location
+      image: req.filename,
+      location: req.body.location,
+      description: req.body.description,
+      seats_remaining: req.body.seats_remaining
     }).then(function(){
       res.send({success: true});
     }).catch(function(){
@@ -67,7 +68,9 @@ exports.update = function(req, res) {
         name: req.body.name || "Untitled Event",
         price: req.body.price || 700,
         location: req.body.location || "Toronto",
-        date: req.body.date ||"2018-05-28"
+        date: req.body.date ||"2018-05-28",
+        description: req.body.description || "This concert can't be missed, mussum Ipsum, cacilds vidis litro abertis. Si u mundo ta muito paradis Toma um me que o mundo vai girarzis" ,
+        seats_remaining: req.body.seats_remaining || 0
     }, {new: true})
     .then(event => {
         if(!event) {
@@ -87,3 +90,7 @@ exports.update = function(req, res) {
         });
     });
 };
+
+exports.postAdmin = function(req,res) {
+    
+}
