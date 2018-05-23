@@ -81,7 +81,7 @@ contract TicketFactory is Ownable, TicketOwnership {
      * @param _owner address of the ticket owner
      * @return uint256[] id of tickets
      */
-    function ticketsOf(address _owner) public view returns (uint256[]) {
+    function getTicketsOf(address _owner) public view returns (uint256[]) {
         return ownedTokens[_owner];
     }
 
