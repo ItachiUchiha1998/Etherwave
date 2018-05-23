@@ -7,8 +7,8 @@ db();
 var ticketSchema = new Schema({ 
  	name: String,
 	price: Number,
-	date: {type: Date,default: Date.now()},
-	image: String,
+	date: {type: Date,default: Date.now()},//
+	image: String,//
 	location: String,
 	description: String,
 	seats_remaining: Number

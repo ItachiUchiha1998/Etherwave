@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Admin | <%= title %></title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+</head>
+<body>
+	<h1 style="position: relative;left: 400px">ADMIN || ETHERWAVE</h1>
+	<div class="container">
+    <div class="row">
+	<div style="width: 80%;position: relative;left: 100px;top: 50px" >
+	
+		<form action="/newEvent" method="POST">
+
+		<div class="form-group">
+	    	<label>Event Name</label>
+	    	<input type="text" class="form-control" id="eventName" placeholder="Enter Event Name">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label>Event Description</label>
+	    	<textarea type="text" class="form-control" id="eventDesc" placeholder="Enter Event Description"></textarea> 
+	  	</div>
+
+		<div class="form-group">
+	    	<label>Event Location</label>
+	    	<input type="text" class="form-control" id="eventLocation" placeholder="Enter Event Location">
+	  	</div>  	
+
+	  	<div class="form-group">
+	    	<label>Event Ticket Price</label>
+	    	<input type="number" class="form-control" id="eventPrice" placeholder="Enter Event Price in $">
+	  	</div>
+
+	  	<div class="form-group">
+	    	<label>Event Total Capacity</label>
+	    	<input type="number" class="form-control" id="eventSeats" placeholder="Enter Event total seating capacity">
+	  	</div>
+
+		 <div class="form-group">
+        <label class="control-label" for="date">Date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      </div>
+
+      <input type="file" name="image" id="image">
+	  <br>
+	  <button type="submit" class="btn btn-primary">Submit</button>
+
+		</form>
+
+	</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+            $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+        </script>
+
+</body>
+</html>
