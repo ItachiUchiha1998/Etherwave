@@ -25,14 +25,15 @@ contract TicketFactory is Ownable, TicketOwnership {
         string name;
         uint256 dateTime;
         uint256 price;
+        string location;
         uint256 ticketsAvailable;
-        uint256 supply;
+        uint256 seats;
     }
     Event[] public events;
 
     /* Events */
     event TicketCreated(address indexed owner, uint indexed ticketId); 
-    event EventCreated(uint indexed eventId, string indexed name, uint256 dateTime, uint256 price, uint256 supply);    
+    event EventCreated(uint indexed eventId, string indexed name, uint256 dateTime, uint256 price, string location, uint256 seats);    
     event EventPriceChanged(uint256 eventId, uint256 price);
     
     /* Mappings */
@@ -90,7 +91,7 @@ contract TicketFactory is Ownable, TicketOwnership {
      * @param _name event name
      * @param _dateTime event date
      * @param _price event tickets price
-     * @param _supply initial supply
+     * @param _seats initial seats
      * @param _admin address of the event admin
      * @return uint event's id
      */
@@ -100,16 +101,15 @@ contract TicketFactory is Ownable, TicketOwnership {
         uint256 _price,
         string _location,
         uint256 _seats,
-        uint256 _supply,
         address _admin
     ) 
         public 
         onlyOwner()
         returns (uint256) 
     {
-        uint id = events.push(Event(_name, _dateTime, _price, _location, _seats, _supply, _supply)) - 1;
+        uint id = events.push(Event(_name, _dateTime, _price, _location, _seats, _seats)) - 1;
         eventToAdmin[id] = _admin;
-        emit EventCreated(id, _name, _dateTime,_price, _location, _seats, _supply);
+        emit EventCreated(id, _name, _dateTime, _price, _location, _seats);
         return id;
     }
 
