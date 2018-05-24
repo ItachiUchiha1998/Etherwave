@@ -1,3 +1,7 @@
+
+TicketFactoryContract = {}
+TicketOwnershipContract = {}
+
 var displayData = `<img src="images/${event.id}.png" class="img-responsive" alt="Image">
         <div class="caption">
           <h3 class="text-center">${event.name}</h3>
@@ -12,7 +16,6 @@ var displayData = `<img src="images/${event.id}.png" class="img-responsive" alt=
               <p><i class="fas fa-map-marker"></i> &emsp; ${event.location} </p>
             </div>
             <div class="col-sm-6">
-                <p><i class="fas fa-calendar-alt"></i> &emsp; ${event.dateTime.toISOString().substring(0, 10)} </p>
                 <p> <i class="fas fa-ticket-alt"></i> &emsp; ${event.seats_remaining} Left </p>
             </div>`;
 
@@ -27,7 +30,7 @@ var displayOne = `<br><br><br>
       <h1>${event.name}</h1>
       <hr>
       <p></p><p> ${event.description} </p>               &nbsp;</p><p></p>
-      <p><i class="fas fa-calendar-alt"></i> &emsp; ${event.dateTime.toISOString().substring(0, 10)}  </p>
+   
       <p><i class="fas fa-map-marker"></i> &emsp; ${event.location} </p>
       <p> <i class="fas fa-ticket-alt"></i> &emsp; ${event.seats_remaining} Left </p>
 
@@ -51,36 +54,16 @@ function init () {
         web3Provider = new Web3.providers.HttpProvider('http://localhost:8545');
     }
     web3 = new Web3(web3Provider);
-    var myContractAddress = "YOUR_CONTRACT_ADDRESS";
-    var myContract = new web3js.eth.Contract(myABI, myContractAddress);
 
     return initContracts();
 };
 
+function initContracts() {      
+  var ticketFactoryAddress = "0x0b634009ef4aeedbb7d84ea9871555c834c95647";// Replace address after running npm run testrpc
+  TicketFactoryContract.call = web3.eth.contract(ticketFactoryAbi).at(ticketFactoryAddress); // Replace abi.js if changed
 
-function initContracts() {
-    $.getJSON('build/contracts/TicketFactory.json', function(data) {
-        var TicketFactoryArtifact = data;
-        var TicketFactoryContract = TruffleContract(TicketFactoryArtifact);
-        
-        TicketFactoryContract.setProvider(web3Provider); 
-         
-        console.log("TicketFactoryContract:")
-        console.log(TicketFactoryContract)
-
-        contracts.TicketFactoryContract = TicketFactoryContract.deployed();
-    });
-    $.getJSON('build/contracts/TicketOwnership.json', function (data) {
-        var TicketOwnershipArtifact = data;
-        var TicketOwnershipContract = TruffleContract(TicketOwnershipArtifact);
-
-        TicketOwnershipContract.setProvider(web3Provider);
-
-        console.log("TicketOwnershipContract:")
-        console.log(TicketOwnershipContract)
-
-        contracts.Transcripts = TicketOwnershipContract.deployed(); 
-    });   
+  var ticketOwnershipAddress = "0x6ff9e53f421559fc3eb01632956d11d13c4d4be2";// Replace after running npm run testrpc
+  TicketOwnershipContract.call = web3.eth.contract(ticketOwnershipAbi).at(ticketOwnershipAddress); // Replace address abi.js if changed
 };
 
 function createEvent(name, dateTime, price,location,seats,supply,admin) { // display all events
@@ -90,7 +73,7 @@ function createEvent(name, dateTime, price,location,seats,supply,admin) { // dis
     console.log("Event Created Successfully");
   })
   .on("error", function(error) {
-    console.log("error" : error);
+    console.log("error" + error);
   });
 }
 
@@ -120,7 +103,27 @@ function displayOneEvent(id) { // display individual event
           });
 }
 
-function purchase(id,buyer,price) { // purchase ticket
-    TicketFactory.methods.purchase(id,buyer)
-.send({ from: userAccount, value: web3js.utils.toWei(price, "ether") }) 
+// purchase ticket (working)
+function purchase(eventId, price) { 
+  let _buyer = web3.eth.accounts[0];
+  console.log("buyer: " + _buyer);
+
+  TicketFactoryContract.call.purchase
+  .sendTransaction(
+    1, // eventId, Change the contract
+    _buyer, 
+    {
+      value: price, //web3.utils.toWei(price, "ether"), // TypeError: web3.utils is undefined
+      from: _buyer
+    },
+    function (err, result){
+      console.log(result)
+    });
+
+//     TicketFactory.methods.purchase(id,buyer)
+// .send({ from: userAccount, value: web3js.utils.toWei(price, "ether") }) 
 }
+
+window.onload = function() {
+  init();  
+};
