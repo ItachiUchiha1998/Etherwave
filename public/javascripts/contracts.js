@@ -1,4 +1,4 @@
-
+  
 TicketFactoryContract = {}
 TicketOwnershipContract = {}
 
@@ -85,7 +85,7 @@ function displayEvents(ids) { // list all events
             $("#events").append(displayData);
             if(event.seats_remaining==0) {
                 $("#buttonType").append(`
-                    <button type="button" class="btn btn-secondary" disabled onClick="purchaseTicket(this.id)" id="${event.id}"><b>Sold Out!</b></button>
+                    <button type="button" class="btn btn-secondary" disabled id="${event.id}"><b>Sold Out!</b></button>
              <button type="button" class="btn btn-primary active" onClick="" id="${event.id}">Trade Tickets</button>             
              `);
             } else {
