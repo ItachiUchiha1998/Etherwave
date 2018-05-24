@@ -98,6 +98,8 @@ contract TicketFactory is Ownable, TicketOwnership {
         string _name, 
         uint256 _dateTime, 
         uint256 _price,
+        string _location,
+        uint256 _seats,
         uint256 _supply,
         address _admin
     ) 
@@ -105,9 +107,9 @@ contract TicketFactory is Ownable, TicketOwnership {
         onlyOwner()
         returns (uint256) 
     {
-        uint id = events.push(Event(_name, _dateTime, _price, _supply, _supply)) - 1;
+        uint id = events.push(Event(_name, _dateTime, _price, _location, _seats, _supply, _supply)) - 1;
         eventToAdmin[id] = _admin;
-        emit EventCreated(id, _name, _dateTime,_price, _supply);
+        emit EventCreated(id, _name, _dateTime,_price, _location, _seats, _supply);
         return id;
     }
 
@@ -140,4 +142,8 @@ contract TicketFactory is Ownable, TicketOwnership {
         emit EventPriceChanged(_eventId, _price);
     }
 
+    //code getEventDetails
+    //code getSingleEventDetails
+
 }
+

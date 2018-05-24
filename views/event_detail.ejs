@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><%= title %></title>
+  <title><%= event.name %></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="../stylesheets/app.css">
+  <script language="javascript" type="text/javascript" src="web3.min.js"></script>
 </head>
 <body>
 
@@ -34,32 +35,7 @@
 
 
 <div class="row event-page">
-  <div class="row content">
-    
-    <br><br><br>
-    <div class="col-md-5 row col-md-offset-1">
-      <div class="col-md-12" id="main-img">            
-        <img src="../images/<%=event.id%>.png" class="img-responsive" alt="Image">
-      </div>
-    </div>
-    <div class="col-md-4 row event-detail">
-      <h1><%= event.name %></h1>
-      <hr>
-      <p></p><p> <%= event.description %> </p>               &nbsp;</p><p></p>
-      <p><i class="fas fa-calendar-alt"></i> &emsp; <%= event.date.toISOString().substring(0, 10) %> </p>
-      <p><i class="fas fa-map-marker"></i> &emsp; <%= event.location %> </p>
-      <p> <i class="fas fa-ticket-alt"></i> &emsp; <%= event.seats_remaining%> Left </p>
-
-      <div class="row">
-        <div class="col-md-6">
-          <h3><i class="fas fa-dollar-sign"></i>  <%= event.price %> </h3>
-        </div>
-        <div class="col-md-6">
-          <a class="btn btn-default btn-purchase">Buy Ticket</a>
-        </div>        
-      </div>
-    </div>
-  </div>
+  <div class="row content" id="event"></div>
 </div>
 
 <footer class="container-fluid text-center">
