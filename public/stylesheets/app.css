@@ -71,11 +71,11 @@ a.logo {
 /* FILTER */
 .image-title {
     position: absolute;
-    left: 0;
+    left: 5%;
     top: 30%;
-    width: 100%;
+    width: 80%;
     text-align: center;
-    font-size: 33px;
+    font-size: 40px;
     color: #fff;
     font-weight: 900;
     /*text-transform: uppercase;*/
@@ -85,13 +85,12 @@ a.logo {
 
 .filter-box {
     position: absolute;
-    left: 25%;
-    top: 40%;
-    width: 50%;
+    left: 33%;
+    top: 50%;
+    width: 100%;
 } 
 
 .filter-box>input[type=text] { 
-    width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
@@ -102,8 +101,7 @@ a.logo {
     background-repeat: no-repeat;
     background-size: 20px;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    width: 25%;   
 }
 
 #search-bar::before {
@@ -112,18 +110,14 @@ a.logo {
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    
-    font-family: "FontAwesome";
-    font-weight: 900;
-    content: "\f002";
+    -webkit-font-smoothing: antialiased; 
 }
 
 /* When the input field gets focus, change its width to 100% */
-.filter-box>input[type=text]:focus {
+/* .filter-box>input[type=text]:focus {
     width: 100%;
     background-size: 20px;
-}
+} */
 
 /* EVENT DETAIL */
 .event-page>div {
