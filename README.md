@@ -2,7 +2,8 @@
 
 ## Basic Idea
 
-An app to book concert tickets via ethereum and also allow users to trade their tickets if they want
+An app to book concert tickets via ethereum and also allow users to trade their tickets among themselves
+<br>
 Link to demo: <a>https://docs.google.com/presentation/d/e/2PACX-1vT0gtjLemxmaykeEv3nIXJjBN0PB8wuFJ-AbzqdbuEhUxrJlp4CKo4MT5fJUhSfJUh2QClkOaPnUxBB/pub?start=false&loop=false&delayms=3000#slide=id.g3aebf1166c_0_64</a>
 
 ## Setup
