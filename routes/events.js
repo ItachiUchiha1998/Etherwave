@@ -20,7 +20,7 @@ router.post('/create', upload.single('image'), events.create);
 // Retrieve all Events
 router.get('/', events.findAll);
 
-// Retrieve a single Event with noteId
+// Retrieve a single Event with eventId
 router.get('/:eventId', events.findOne);
 
 // Update an Event with eventId

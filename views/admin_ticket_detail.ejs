@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+
+    <title>Etherwave - Admin Template</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/dashgum-style.css">
+    <link rel="stylesheet" href="/stylesheets/dashgum-style-responsive.css">
+    <link rel="stylesheet" href="/stylesheets/app.css">
+    <script src="../javascripts/web3.min.js"></script>
+  </head>
+<body>
+
+  <section id="container">
+     <!-- **********************************************************************************************************************************************************
+      TOP BAR CONTENT & NOTIFICATIONS
+      *********************************************************************************************************************************************************** -->
+      <!--header start-->
+      <header class="header black-bg">
+          <div class="sidebar-toggle-box">
+              <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+          </div>
+        <!--logo start-->
+        <a href="index.html" class="logo"><b>Etherwave</b></a>
+        <!--logo end-->
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <!-- settings start -->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+                        <i class="fa fa-tasks"></i>
+                        <span class="badge bg-theme">1</span>
+                    </a>
+                    <ul class="dropdown-menu extended tasks-bar">
+                        <div class="notify-arrow notify-arrow-green"></div>
+                        <li>
+                            <p class="green">You have 1 pending ticket</p>
+                        </li>
+                        <li>
+                            <a href="index.html#">
+                                <div class="task-info">
+                                    <div class="desc">Pitbull Niagara CA</div>
+                                    <div class="percent">available!</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="external">
+                            <a href="#">See All Tickets</a>
+                        </li>
+                    </ul>
+                </li>
+                <!-- settings end -->               
+            </ul>
+            <!--  notification end -->
+        </div>
+    </header>
+  <!--header end-->
+   <!-- **********************************************************************************************************************************************************
+      MAIN SIDEBAR MENU
+      *********************************************************************************************************************************************************** -->
+      <!--sidebar start-->
+    <aside>
+        <div id="sidebar"  class="nav-collapse ">
+            <!-- sidebar menu start-->
+            <ul class="sidebar-menu" id="nav-accordion">
+            
+                <p class="centered"><img src="/images/etherwave-logo.png" class="img-circle" width="90"></p>
+                  
+                <li class="mt">
+                    <a href="index.html">
+                        <i class="fa fa-ticket-alt"></i>
+                        <span>My Tickets</span>
+                    </a>
+                </li>
+
+            </ul>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->  
+  </section>
+  <!-- **********************************************************************************************************************************************************
+    MAIN CONTENT
+  *********************************************************************************************************************************************************** -->
+  <!--main content start-->
+  <section id="main-content">
+    <section class="wrapper site-min-height">
+      <h3><i class="fa fa-angle-right"></i> Manage your tickets</h3>
+      <div class="row mt">
+        <div class="col-lg-12">  
+          <div class="row">
+            <!-- TICKET PANEL -->
+            <div class="col-lg-3 col-md-4 col-sm-4 mb">
+              <div class="content-panel pn">
+                <div id="profile-01">
+                  <h3>Pitbull</h3>
+                  <h6>Niagara Falls</h6>
+                </div>
+                <div class="profile-01 centered">
+                  <p>VIEW TICKET</p>
+                </div>
+                <div class="centered">
+                  <h6><i class="fa fa-map-marker"></i><br/>Niagara Falls</h6>
+                </div>
+              </div><!--/content-panel -->
+            </div><!--/col-md-4 -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+
+
+<footer class="container-fluid text-center">
+  <p>Copyright © 2018 Etherwave</p>
+</footer>
+
+<script src="../javascripts/app.js"></script>
+<script src="../javascripts/abi.js"></script>
+<script src="../javascripts/contracts.js"></script>
+</body>
+</html>
