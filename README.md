@@ -13,8 +13,7 @@ For creation of contracts
 Enter Command: `truffle migrate`
 
 Main Packages used are: 
-express - for serving the app
-openzeppelin-solidity - to add blockchain functionality
-truffle - framework to interact with blockchain 
-web3 - integrate blockchain with UI
-
+<br>express - for serving the app
+<br>openzeppelin-solidity - to add blockchain functionality
+<br>truffle - framework to interact with blockchain 
+<br>web3 - integrate blockchain with UI
