@@ -11,7 +11,7 @@ An app to book concert tickets via ethereum and also allow users to trade their 
 ### The user own the ticket
 
 * The users have easy access to their tokens through Etherwave app
-* They are free can transfer in any ERC721 exchange
+* They are free to transfer in any ERC721 exchange
 * They can be easily verified by anyone through the QR Code and comparing to the information registered in the blockchain
 
 ### No more endless lines!
