@@ -1,3 +1,8 @@
+
+body, html {
+    height: 100%;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */ 
 .navbar {
     margin-bottom: 0;
@@ -41,6 +46,83 @@ a.logo {
     padding-bottom: 29px !important;
     color: #32DBCC;
     font-weight: 700;
+}
+
+/* BACKGROUND IMAGE*/
+
+/* Create a Parallax Effect */
+.parallax {
+    /* The image used */
+    background-image: url('/images/home.jpg');
+
+    /* Full height */
+    height: 90%; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    opacity: 0.7;
+    position: relative;
+}
+
+/* FILTER */
+.image-title {
+    position: absolute;
+    left: 0;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+    font-size: 33px;
+    color: #fff;
+    font-weight: 900;
+    /*text-transform: uppercase;*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #2e0099;
+}
+
+.filter-box {
+    position: absolute;
+    left: 25%;
+    top: 40%;
+    width: 50%;
+} 
+
+.filter-box>input[type=text] { 
+    width: 200px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('https://use.fontawesome.com/releases/v5.0.13/svgs/solid/map-marker.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    background-size: 20px;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+#search-bar::before {
+    margin-right: 0.5em;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    
+    font-family: "FontAwesome";
+    font-weight: 900;
+    content: "\f002";
+}
+
+/* When the input field gets focus, change its width to 100% */
+.filter-box>input[type=text]:focus {
+    width: 100%;
+    background-size: 20px;
 }
 
 /* EVENT DETAIL */
