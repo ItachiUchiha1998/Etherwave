@@ -1,7 +1,7 @@
 /* Loading all libraries from common */
 const {
-  TicketFactory, //Ticket Factor Contract
-  TicketOwnership, //Ticket Ownership Contract
+    TicketFactory, //Ticket Factor Contract
+    TicketOwnership, //Ticket Ownership Contract
     BigNumber, //BigNumber from web3 (for ease to use)
     CommonVariables, //Multiple common variables
     expectRevert, //Check if the Solidity returns "revert" exception (usually result from require failed)
@@ -19,6 +19,7 @@ const {
     const _eventName = commonVars.eventName;
     const _eventDateTime = commonVars.eventDateTime;
     const _eventTicketprice = commonVars.eventTicketprice;
+    const _eventLocation = commonVars.eventLocation;
     const _eventTicketsupply = commonVars.eventTicketsupply;
     const _eventAdmin = commonVars.eventAdmin;
     const _buyers = commonVars.buyers;
@@ -39,6 +40,7 @@ const {
           _eventName, 
           _eventDateTime, 
           _eventTicketprice,
+          _eventLocation,
           _eventTicketsupply,
           _eventAdmin,
           { from: _appOwner }

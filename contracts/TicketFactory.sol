@@ -37,7 +37,10 @@ contract TicketFactory is Ownable, TicketOwnership {
     event EventPriceChanged(uint256 eventId, uint256 price);
     
     /* Mappings */
+    // Mapping from event id to admin
     mapping (uint => address) private eventToAdmin;
+    // Mapping from admin to owned event
+    mapping (address => uint256[]) private ownedEvents;
     // Mapping from owner to owned token
     mapping (address => uint256[]) private ownedTokens;
 
@@ -78,12 +81,43 @@ contract TicketFactory is Ownable, TicketOwnership {
     }
 
     /**
+     * @dev Get Ticket details
+     * @param _index id of the ticket
+     */
+    function getTicket(uint _index) public view returns (string, uint, uint, bool) {
+        return (
+            tickets[_index].description, 
+            tickets[_index].referenceCode, 
+            tickets[_index].dateTime, 
+            tickets[_index].isValid
+            );
+    }
+
+    /**
      * @dev The tickets owned by an address
      * @param _owner address of the ticket owner
      * @return uint256[] id of tickets
      */
     function getTicketsOf(address _owner) public view returns (uint256[]) {
         return ownedTokens[_owner];
+    }
+
+    /**
+     * @dev Get the valid status of the ticket
+     * @param _ticketId ticket number id
+     * @return bool isValid
+     */
+    function getIsValid(uint256 _ticketId) public view returns (bool) {
+        return tickets[_ticketId].isValid;
+    }
+
+    /**
+     * @dev Set the ticket as valid/invalid
+     * @param _ticketId ticket id
+     * @param _isValid ticket valid flag
+     */
+    function setIsValid(uint256 _ticketId, bool _isValid) public onlyOwner() {
+        tickets[_ticketId].isValid = _isValid;
     }
 
     /**
@@ -109,8 +143,41 @@ contract TicketFactory is Ownable, TicketOwnership {
     {
         uint id = events.push(Event(_name, _dateTime, _price, _location, _seats, _seats)) - 1;
         eventToAdmin[id] = _admin;
+        ownedEvents[_admin].push(id);
         emit EventCreated(id, _name, _dateTime, _price, _location, _seats);
         return id;
+    }
+
+    /**
+     * @dev Get list of event id owned by the admin address
+     * @param _admin address of the event admin
+     * @return uint256 event admin address
+     */
+    function getEvents(address _admin) public view returns (uint256[]) {
+        return ownedEvents[_admin];
+    }
+
+    /**
+     * @dev Get Event details
+     * @param _index id of the event
+     */
+    function getEvent(uint _index) public view 
+    returns (
+        string,
+        uint256,
+        uint256,
+        string,
+        uint256,
+        uint256
+    ) {
+        return (
+            events[_index].name,
+            events[_index].dateTime,
+            events[_index].price,
+            events[_index].location,
+            events[_index].ticketsAvailable,
+            events[_index].seats
+        );
     }
 
     /**
@@ -141,9 +208,5 @@ contract TicketFactory is Ownable, TicketOwnership {
         events[_eventId].price = _price;
         emit EventPriceChanged(_eventId, _price);
     }
-
-    //code getEventDetails
-    //code getSingleEventDetails
-
 }
 

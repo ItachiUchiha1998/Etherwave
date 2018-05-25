@@ -23,7 +23,8 @@ class CommonVariables {
         // DateTime: need to convert from Datetime and back - Date in EST timezone: 5/23/2018, 8:30:17 PM
         this.eventDateTime = 1527121817; 
         // Price: for future consideration: different ticket prices for different sections
-        this.eventTicketprice = web3.toWei('0.2', 'ether');        
+        this.eventTicketprice = web3.toWei('0.2', 'ether');     
+        this.eventLocation = "Niagara";
         this.eventTicketsupply = 100000;
 
         //this.ticketRefCode = 777216;
