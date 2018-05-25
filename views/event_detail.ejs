@@ -43,7 +43,7 @@
             <h3><i class="fas fa-dollar-sign"></i>  <%= event.price %> </h3>
           </div>
           <div class="col-md-6">
-            <a class="btn btn-default btn-purchase" onclick="purchase(`<%=event.id%>`, `<%=event.price%>`)">Buy Ticket</a>
+            <a class="btn btn-default btn-warning" onclick="purchase(`<%=event.id%>`, `<%=event.price%>`)">Buy Ticket</a>
           </div>        
         </div>
       </div>
@@ -51,6 +51,7 @@
   </div>
 
   <% include partials/footer.ejs  %>
+</section>
 
 <script src="../javascripts/app.js"></script>
 <script src="../javascripts/abi.js"></script>
