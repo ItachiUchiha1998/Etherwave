@@ -5,6 +5,11 @@ router.get('/', (req,res,next) => {
 	res.render('admin', {title: "EtherWave"});
 });
 
+// Retrieve Tickets
+router.get('/ticket', (req,res,next) => {
+	res.render('admin_ticket', {title: "EtherWave Dashboard"});
+});
+
 // Retrieve a single Ticket with ticketId
 router.get('/ticket/:ticketId', (req,res,next) => {
 	res.render('admin_ticket_detail', {title: "EtherWave Dashboard"});

@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Etherwave - Admin</title>
+    <title>Etherwave - Admin Template</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -17,7 +17,6 @@
     <link rel="stylesheet" href="/stylesheets/dashgum-style-responsive.css">
     <link rel="stylesheet" href="/stylesheets/app.css">
     <script src="/javascripts/web3.min.js"></script>
-    <script src="/javascripts/qrcode.min.js"></script>
   </head>
 <body>
 
@@ -48,7 +47,7 @@
                             <p class="green">You have 1 pending ticket</p>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="ticket/ID">
                                 <div class="task-info">
                                     <div class="desc">Pitbull Niagara CA</div>
                                     <div class="percent">available!</div>
@@ -78,7 +77,7 @@
                 <p class="centered"><img src="/images/etherwave-logo.png" class="img-circle" width="90"></p>
                   
                 <li class="mt">
-                    <a href="/admin/ticket">
+                    <a href="ticket">
                         <i class="fa fa-ticket-alt"></i>
                         <span>My Tickets</span>
                     </a>
@@ -98,42 +97,28 @@
     <section class="wrapper site-min-height">
       <h3><i class="fa fa-angle-right"></i> Manage your tickets</h3>
       <div class="row mt">
-        <div class="col-lg-12 col-md-12 col-sm-12">                 
-          <!-- TICKET DETAIL -->
-          <div class="row"> 
-            <div class="col-lg-6 col-md-6 col-sm-12"> 
-              <div class="showback"> 
-                <h4><i class="fa fa-ticket-alt"></i> Pitbull </h4>
-                <hr>
-                <p></p><p> This concert can't be missed, mussum Ipsum, cacilds vidis litro abertis. Si u mundo ta muito paradis Toma um me que o mundo vai girarzis</p>               &nbsp;</p><p></p>
-                <div class="col-lg-6 col-lg-offset-1">
-                  <p><i class="fas fa-calendar-alt"></i> &emsp; May 28, 2018 </p>
+        <div class="col-lg-12">  
+          <div class="row">
+            <!-- TICKET PANEL -->
+            <div class="col-lg-3 col-md-4 col-sm-4 mb">
+              <div class="content-panel pn">
+                <div id="profile-01">
+                  <h3>Pitbull</h3>
+                  <h6>Niagara Falls</h6>
                 </div>
-                <div class="col-lg-6 col-lg-offset-1">
-                  <p><i class="fas fa-map-marker"></i> &emsp; Niagara </p>              
+                <a href="ticket/ID">
+                  <div class="profile-01 centered">
+                    <p>VIEW TICKET</p>
+                  </div>
+                </a>
+                <div class="centered">
+                  <h6><i class="fa fa-map-marker"></i><br/>Niagara Falls</h6>
                 </div>
-                <div class="row">
-                  <div class="col-md-6 col-md-offset-1">
-                    <h3>1 Ticket </h3>
-                  </div>     
-                  <div class="col-md-5">
-                    <h3><i class="fas fa-dollar-sign"></i> 100 </h3>
-                  </div>     
-                </div>         
-              </div><!-- /showback -->
-            </div>
-            <!-- QR CODE --> 
-            <input id="text" type="hidden" value="ID" />
-            <div class="col-lg-4 col-md-4 col-sm-12"> 
-              <div class="col-md-4 mb">
-                <!-- INSTAGRAM PANEL -->
-                <div id="qrcode" class="instagram-panel pn">                   
-                </div>
-              </div>
-            </div>
-          </div>                 
+              </div><!--/content-panel -->
+            </div><!--/col-md-4 -->
+          </div>
         </div>
-      </div>      
+      </div>
     </section>
   </section>
 
@@ -144,7 +129,6 @@
 </footer>
 
 <script src="/javascripts/dashgum-scripts.js"></script>
-<script src="/javascripts/qr-page.js"></script>
 <script src="/javascripts/app.js"></script>
 <script src="/javascripts/abi.js"></script>
 <script src="/javascripts/contracts.js"></script>
