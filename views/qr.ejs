@@ -14,16 +14,25 @@
 	  width:160px;
 	  height:160px;
 	  margin-top:15px;
+	  position: relative;
+	  left: 500px;
+	  top: 100px;
 	}
 	#text {
 	  display: block;
 	  width: 80%;
 	}
+	h1 {
+		position: relative;
+	  left: 525px;
+	  top: 200px;	
+	}
 </style>
 
 <body>
-	<input id="text" type="text" value="http://localhost:3000/{ticket_id}" />
+	<input id="text" type="hidden" value="http://localhost:3000/{ticket_id}" />
 	<div id="qrcode"></div>
+	<h1>Your QR Code</h1>
 	<script type="text/javascript" src="../javascripts/qr-page.js"></script>
 </body>
 </html>

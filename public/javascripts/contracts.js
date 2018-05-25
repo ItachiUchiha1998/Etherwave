@@ -2,7 +2,7 @@
 TicketFactoryContract = {}
 TicketOwnershipContract = {}
 
-var displayData = `<img src="images/${event.id}.png" class="img-responsive" alt="Image">
+var displayData = `<img src="images/`+${event.id}+`.png" class="img-responsive" alt="Image">
         <div class="caption">
           <h3 class="text-center">${event.name}</h3>
           <div class="row">
@@ -22,7 +22,7 @@ var displayData = `<img src="images/${event.id}.png" class="img-responsive" alt=
 var displayOne = `<br><br><br>
     <div class="col-md-5 row col-md-offset-1">
       <div class="col-md-12" id="main-img">            
-        <img src="../images/${event.id}.png" class="img-responsive" alt="Image">
+        <img src="../images/`+${event.id}+`.png" class="img-responsive" alt="Image">
       </div>
     </div>
     
@@ -123,6 +123,7 @@ function purchase(eventId, price) {
 //     TicketFactory.methods.purchase(id,buyer)
 // .send({ from: userAccount, value: web3js.utils.toWei(price, "ether") }) 
 }
+
 
 window.onload = function() {
   init();  
