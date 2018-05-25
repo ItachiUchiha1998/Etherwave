@@ -1,6 +1,6 @@
 # Etherwave ![logo](https://lh3.googleusercontent.com/6vBh-jeSCmoxbcL9Ntgc6zkwoE2qieU7dT8DIfMWs4jgQ6TecCujMGdrY8HIZ-gztc1jeovPSQp6YHA2lVSe=w1920-h908)
 
-Project built for Smackathon _Decentralize the music industry_
+Project built for **Smackathon - _Decentralize the music industry_**
 
 ## Idea
 
