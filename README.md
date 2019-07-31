@@ -1,4 +1,4 @@
-# Etherwave ![logo](https://lh3.googleusercontent.com/6vBh-jeSCmoxbcL9Ntgc6zkwoE2qieU7dT8DIfMWs4jgQ6TecCujMGdrY8HIZ-gztc1jeovPSQp6YHA2lVSe=w1920-h908)
+# Etherwave 
 
 Project built for **Smackathon - _Decentralize the music industry_**
 
@@ -70,6 +70,19 @@ OpenZeppelin Module was utilized for operations in the Ethereum Blockchain:
 * Selling of Tickets
 * Listing the Tickets owned by a particular User address
 * _future feat:_ Transfering tokens through a waiting list
+
+# Screenshots
+
+<html>
+  <p align="center">
+    <img src='Screenshots/Home Page.jpg' width='300em' style="margin: 0.5em"/>
+    <img src='Screenshots/Event.jpg' width='300em' style="margin: 0.5em"/>
+    <img src='Screenshots/All Tickets.jpg' width='300em' style="margin: 0.5em"/>
+    <img src='Screenshots/Ticket.jpg' width='300em' style="margin: 0.5em"/>
+</p>
+
+</html>
+
 
 # Team
 
